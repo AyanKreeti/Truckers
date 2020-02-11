@@ -1,0 +1,19 @@
+<%= link_to("<< Back to List", orders_path, :class => 'back-link') %>
+
+<div>
+  <h2>Create Schedule delivery</h2>
+
+  <%= form_tag(schedules_path, method: :post) do %>
+  
+    <%= text_field_tag(:trucker_id) %>
+    <%= date_field_tag :delivery_date, as: :date, value: try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
+    <% @orders.each do |order| %>
+
+      <%= check_box_tag "sequence[]", order.id, {multiple: true} %> <%= label_tag order.name%><br/>
+    <% end %>
+    <div class="form-buttons">
+      <%= submit_tag("Create Order schedule") %>
+    </div>
+
+  <% end %>
+</div>

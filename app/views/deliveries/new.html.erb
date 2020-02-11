@@ -1,0 +1,16 @@
+<%= link_to("<< Back to List", orders_path, :class => 'back-link') %>
+
+<div class="subjects new">
+  <h2>Create Subject</h2>
+
+  <%= form_for(@delivery, :url => orders_path, :method => 'post') do |f| %>
+
+    <% @orders.each do |order| %>
+      <%= check_box_tag 'sequence[]', delivery.sequence, false %>
+    <% end %>
+    <div class="form-buttons">
+      <%= f.submit("Create Order") %>
+    </div>
+
+  <% end %>
+</div>

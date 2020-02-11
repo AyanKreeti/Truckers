@@ -1,0 +1,25 @@
+<div class="orders">
+  <h1>Orders</h1>
+  <p>Find all of orders!</p>
+
+  <table class="table">
+    <tr class="header">
+      <th>#</th>
+      <th>Name</th>
+      <th>lat, lng</th>
+    </tr>
+
+    <% @orders.each do |o| %>
+      <tr>
+        <td> <%= o.id %> </td>
+        <td> <%= o.name %></td>
+        <td> <%= o.lat %>, <%=o.lng %></td>
+        <td class="actions">
+          <%= link_to("Show", order_path(o), :class => 'action_show') %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+

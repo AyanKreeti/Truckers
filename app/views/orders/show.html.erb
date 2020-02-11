@@ -1,0 +1,26 @@
+<%= link_to("<< Back to List", orders_path, :class => 'back-link') %>
+
+<div class="subjects show">
+  <h2>Show Order</h2>
+
+  <table class="table" summary="Order detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @order.name %></td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td><%= @order.lat %> <%= @order.lng %></td>
+    </tr>
+
+    <tr>
+      <th>Created</th>
+      <td><%= @order.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @order.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

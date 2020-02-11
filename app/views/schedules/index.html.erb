@@ -1,0 +1,22 @@
+<div class="schedules">
+  <h1>Schedules</h1>
+  <p>Find all of schedules!</p>
+
+  <table class="table">
+    <tr class="header">
+      <th>#</th>
+      <th>Trucker id</th>
+      <th>Order id</th>
+    </tr>
+
+    <% @schedules.each do |o| %>
+      <tr>
+        <td> <%= o.id %> </td>
+        <td> <%= o.trucker_id %></td>
+        <td> <%= o.order_id %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+
