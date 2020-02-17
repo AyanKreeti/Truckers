@@ -1,0 +1,25 @@
+<div class="schedules">
+  <h1>Deliveries</h1>
+  <p>Find all of Delivery Sequences!</p>
+
+  <table class="table">
+    <tr class="header">
+      <th>Id </th>
+      <th>Order ids</th>
+      <th>Schedule id</th>
+      <th>sequence</th>
+    </tr>
+
+    <% @deliveries.each do |d| %>
+      <tr>
+        <td> <%= d.id %></td>
+        <td> <%= d.order_id %></td>
+        <td> <%= d.schedule_id %></td>
+        <td> <%= d.sequence %></td>
+      </tr>
+        
+    <% end %>
+  </table>
+</div>
+
+

@@ -1,19 +1,21 @@
-<div class="schedules">
+<div class="container-fluid w-50">
   <h1>Schedules</h1>
-  <p>Find all of schedules!</p>
+  <p>Find all the schedules!</p>
 
   <table class="table">
     <tr class="header">
       <th>#</th>
       <th>Trucker id</th>
-      <th>Order id</th>
+      <th>Schedule Name</th>
+      <th>Date of Delivery </th>
     </tr>
 
-    <% @schedules.each do |o| %>
+    <% @schedules.each do |s| %>
       <tr>
-        <td> <%= o.id %> </td>
-        <td> <%= o.trucker_id %></td>
-        <td> <%= o.order_id %></td>
+        <td> <%= s.id %> </td>
+        <td> <%= s.trucker_id %> </td>
+        <td> <%= s.schedule_name %> </td>
+        <td> <%= s.delivery_date %></td>
       </tr>
     <% end %>
   </table>

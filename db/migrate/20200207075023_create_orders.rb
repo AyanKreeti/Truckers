@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.string :name
       t.float :lat
       t.float :lng
-      t.boolean :status
+      t.string :status
 
       t.timestamps
     end

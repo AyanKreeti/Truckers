@@ -1,12 +1,15 @@
 <div class="orders">
   <h1>Orders</h1>
   <p>Find all of orders!</p>
-
+<%= form_tag(schedules_path, method: :post, class: 'form-group w-50') do %>
   <table class="table">
     <tr class="header">
       <th>#</th>
       <th>Name</th>
       <th>lat, lng</th>
+      <th>status</th>
+      <th>Action</th>
+      <th>Add</th>
     </tr>
 
     <% @orders.each do |o| %>
@@ -14,12 +17,23 @@
         <td> <%= o.id %> </td>
         <td> <%= o.name %></td>
         <td> <%= o.lat %>, <%=o.lng %></td>
+        <td><%= o.status %></td>
         <td class="actions">
           <%= link_to("Show", order_path(o), :class => 'action_show') %>
         </td>
+        <td>
+        <%= check_box_tag('order_ids[]', o.id, false, disabled: o.status, class: "order_checkbox") %></td>
       </tr>
     <% end %>
   </table>
-</div>
+  <%
+=begin%>
+ <% binding.pry %> 
+<%
+=end%>
+  <%= collection_select :order, :schedule_id,  Schedule.all, :id, :schedule_name, { prompt: "Please select a Schedule" }, class: "form-control", required: true %>
+    <%= submit_tag "Set Schedule", class: "btn btn-primary", id: "schedule-btn", disabled: true, "data-disable-with": "Please wait.." %>
+  <% end %>
 
+</div>
 

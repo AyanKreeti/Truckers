@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
   def create
+    @schedule=  Schedule.all
     @order = Order.new(order_params)
     # binding.pry
     if @order.save
@@ -17,13 +18,17 @@ class OrdersController < ApplicationController
     end
   end
 
+  def create_schedule
+    
+  end
+
   def show
     @order = Order.find(params[:id])
   end
 
   def edit
-
   end
+
   def update
     if @order.update(order_params)
       redirect_to orders_path(@order),flash: { success: "Orders Updated Successfully!" }
@@ -33,6 +38,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
+    # binding.pry
     params.require(:order).permit(:name, :lat, :lng, :status)
   end
 end

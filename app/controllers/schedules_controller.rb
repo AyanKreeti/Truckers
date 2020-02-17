@@ -9,11 +9,12 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.new(truckers_id: schedule_params[:trucker_id], 
-      delivery_date: schedule_params[:delivery_date])
-    
+    # binding.pry
+    # delivery = Delivery.create!(sequence: schedule_params[:order_ids])
+    @schedule = Schedule.new(trucker_id: schedule_params[:trucker_id], 
+      delivery_date: schedule_params[:delivery_date], schedule_name: schedule_params[:trucker_id] + " on "+ schedule_params[:delivery_date])
+      
     if @schedule.save!
-      Order::update_orders(schedule_params[:sequence], @schedule.id)
       redirect_to schedules_path
     else
       binding.pry
@@ -26,6 +27,6 @@ class SchedulesController < ApplicationController
   end
 
   def schedule_params
-    params.permit(:delivery_date, :trucker_id, :sequence)
+    params.permit(:delivery_date, :trucker_id, order_ids: [])
   end
 end

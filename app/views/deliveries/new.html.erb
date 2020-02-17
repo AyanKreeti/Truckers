@@ -1,16 +1,54 @@
-<%= link_to("<< Back to List", orders_path, :class => 'back-link') %>
+<div class="container">
+  <h1>Orders</h1>
+  <p>Find all unassigned orders!</p>
+<%= form_tag(deliveries_path, method: :post, class: 'form-group w-50') do %>
+  <table class="table">
+    <tr class="header">
+      <th>#</th>
+      <th>Name</th>
+      <th>lat, lng</th>
+      <th>status</th>
+      <th>Action</th>
+      <th>Add</th>
+    </tr>
 
-<div class="subjects new">
-  <h2>Create Subject</h2>
-
-  <%= form_for(@delivery, :url => orders_path, :method => 'post') do |f| %>
-
-    <% @orders.each do |order| %>
-      <%= check_box_tag 'sequence[]', delivery.sequence, false %>
+    <% @orders.each do |o| %>
+      <tr>
+        <td> <%= o.id %> </td>
+        <td> <%= o.name %></td>
+        <td> <%= o.lat %>, <%=o.lng %></td>
+        <td><%= o.status %></td>
+        <td class="actions">
+          <%= link_to("Show", order_path(o), :class => 'action_show') %>
+        </td>
+        <td>
+        <%= check_box_tag('order_ids[]', o.id, false, class: "order_checkbox") %></td>
+      </tr>
     <% end %>
-    <div class="form-buttons">
-      <%= f.submit("Create Order") %>
-    </div>
-
+  </table>
+    <%= select_tag :schedule_id, options_from_collection_for_select(@schedules, "id", "schedule_name"), class: "form-control", required: true, prompt: "Please select a Schedule" %>
+    <%= submit_tag "Set Schedule", class: "btn btn-primary", id: "schedule-btn", disabled: true, "data-disable-with": "Please wait.." %>
   <% end %>
+
 </div>
+
+<div class="container">
+    <h1>Orders</h1>
+    <p>Find all Assigned orders!</p>
+  <table class="table">
+      <tr class="header">
+        <th>#</th>
+        <th>status</th>
+        <th>Schedule id</th>
+      </tr>
+
+      <% @assigned_orders.each do |o| %>
+        <tr class = "assigned_orders">
+          <td> <%= o.id %> </td>
+          <td><%= o.status %></td>
+          <td class = "assigned_order_id"><%= o.schedule_id %></td>
+        </tr>
+      <% end %>
+    </table>
+</div>
+
