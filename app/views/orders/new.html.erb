@@ -8,19 +8,19 @@
     <table summary="Subject form fields">
       <tr>
         <th>Name</th>
-        <td><%= f.text_field(:name, class: "form-control") %></td>
+        <td><%= f.text_field(:name, class: "form-control", required:true) %></td>
       </tr>
       <tr>
         <th>Address</th>
-        <td><%= f.text_field(:address, class: "form-control") %></td>
+        <td><%= f.text_field(:address, class: "form-control", required:true) %></td>
       </tr>
       <tr>
         <th>Latitude</th>
-        <td><%= f.text_field(:lat, class: "form-control") %></td>
+        <td><%= f.text_field(:lat, class: "form-control", required:true) %></td>
       </tr>
       <tr>
         <th>Longitude</th>
-        <td><%= f.text_field(:lng, class: "form-control") %></td>
+        <td><%= f.text_field(:lng, class: "form-control", required:true) %></td>
       </tr>
       <tr>
         <th>Status</th>

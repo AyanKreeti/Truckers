@@ -8,13 +8,6 @@
     <%= label_tag 'Trucker id' %><%= text_field_tag(:trucker_id, nil, required:true, class: 'form-control') %></br>
     <%= label_tag 'Date' %><%= date_field_tag :delivery_date, :date, class: "form-control",value: try(:strftime,"%m/%d/%Y"), required: true %></br>
 
-    <%
-=begin%>
- <% @orders.each do |order| %>
-      <%= check_box_tag('order_ids[]', order.id) %><%= order.name %></br>
-    <% end %> 
-<%
-=end%>
 
     <div class="btn btn-primary">
 
