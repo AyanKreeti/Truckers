@@ -1,9 +1,9 @@
-<div class="schedules">
+<div class="container w-50">
   <h1>Deliveries</h1>
-  <p>Find all of Delivery Sequences!</p>
+  <p>Find all of Delivery Sequences! <%= link_to("New Delivery Sequence", new_delivery_path, :class => 'btn-primary') %> </p>
 
-  <table class="table">
-    <tr class="header">
+  <table class="table table-hover table-bordered table-success">
+    <tr class="header thead-dark">
       <th>Id </th>
       <th>Order ids</th>
       <th>Schedule id</th>

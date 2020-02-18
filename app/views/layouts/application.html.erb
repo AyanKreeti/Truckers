@@ -9,7 +9,20 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<body>  
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/orders">TruckersApp</a>
+    <form class="form-inline">
+      <button class="btn btn-outline-primary" type="button"  onclick="window.location.href = '/schedules';">Schedules</button>
+      
+      <div style="padding-left: 10px;">
+        <button class="btn btn-outline-secondary" type="button" onclick="window.location.href = '/orders';">Orders</button>
+      </div>
+      <div style="padding-left: 10px;">
+        <button class="btn btn-outline-success" type="button"  onclick="window.location.href = '/deliveries';">Deliveries</button>
+      </div>
+    </form>
+  </nav>  
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %> alert-dismissible fade show" role="alert">
       <%= message %>

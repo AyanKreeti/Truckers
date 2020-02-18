@@ -17,32 +17,32 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 require('jquery')
-$(document).ready(function(){
-  $('.order_checkbox').on('change', function () {
-    
-    var disabled = true;
-    $('.order_checkbox').each(function (_, box) {
-      if (box.checked) disabled = false;
+$(document).on('turbolinks:load', function () {
+  $(document).ready(function () {
+    $('.order_checkbox').on('change', function () {
+
+      var disabled = true;
+      $('.order_checkbox').each(function (_, box) {
+        if (box.checked) disabled = false;
+      });
+      $('#schedule-btn').prop("disabled", disabled);
     });
-    $('#schedule-btn').prop("disabled", disabled);
+
+    $("#schedule_id").change(function () {
+      let current_schedule_id = Number(this.value);
+
+      console.log(current_schedule_id);
+
+
+      $(".assigned_order_id").each(function (index, order) {
+        order.parentElement.style.display = "table-row";
+        let schedule_id = Number(order.textContent);
+        if (current_schedule_id != 0 && schedule_id != current_schedule_id) {
+          order.parentElement.style.display = "none";
+        }
+
+      })
+    })
+
   });
-
-$("#schedule_id").change(function(){
-  let current_schedule_id = Number(this.value);
-
-  console.log(current_schedule_id);
-  $(".assigned_order_id").each(function(index, order){
-    order.parentElement.style.display="table-row";
-
-    let schedule_id = Number(order.textContent);
-
-    if(schedule_id!=current_schedule_id){
-      order.parentElement.style.display="none";
-    }
-
-  })
-})
-  
 });
-
-

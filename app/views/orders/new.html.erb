@@ -1,33 +1,38 @@
 <%= link_to("<< Back to List", orders_path, :class => 'back-link') %>
 
-<div class="subjects new">
-  <h2>Create Subject</h2>
+<div>
+  <h2>Create Order</h2>
 
-  <%= form_for(@order, :url => orders_path, :method => 'post') do |f| %>
+  <%= form_for(@order, :url => orders_path, :method => 'post', :class => "form-group") do |f| %>
 
     <table summary="Subject form fields">
       <tr>
         <th>Name</th>
-        <td><%= f.text_field(:name) %></td>
+        <td><%= f.text_field(:name, class: "form-control") %></td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td><%= f.text_field(:address, class: "form-control") %></td>
       </tr>
       <tr>
         <th>Latitude</th>
-        <td><%= f.text_field(:lat) %></td>
+        <td><%= f.text_field(:lat, class: "form-control") %></td>
       </tr>
       <tr>
         <th>Longitude</th>
-        <td><%= f.text_field(:lng) %></td>
+        <td><%= f.text_field(:lng, class: "form-control") %></td>
       </tr>
       <tr>
         <th>Status</th>
         <td>
-          <%= f.select :status, ['Created', 'Delivered']%>
+          <%= f.select(:status, ['created', 'delivered', 'assigned', 'pending'], {}, class: "form-control") %>
         </td>
       </tr>
     </table>
+    </br>
 
     <div class="form-buttons">
-      <%= f.submit("Create Order") %>
+      <%= f.submit("Create Order", class: "btn btn-primary") %>
     </div>
 
   <% end %>

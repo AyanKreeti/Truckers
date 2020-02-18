@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
   def create
     @schedule=  Schedule.all
     @order = Order.new(order_params)
-    # binding.pry
     if @order.save
       redirect_to orders_path
     else
@@ -39,6 +38,6 @@ class OrdersController < ApplicationController
 
   def order_params
     # binding.pry
-    params.require(:order).permit(:name, :lat, :lng, :status)
+    params.require(:order).permit(:name, :lat, :lng, :status, :address)
   end
 end

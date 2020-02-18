@@ -1,11 +1,14 @@
-<div class="orders">
+
+<button class="btn btn-outline-primary" type="button"  onclick="window.location.href = '/deliveries/new';">Add Orders to Schedule</button>
+
+<div class="orders p-2 m3">
   <h1>Orders</h1>
-  <p>Find all of orders!</p>
-  <table class="table">
+  <p>Find all of orders! <%= link_to("Create Order", new_order_path, :class => 'btn-primary') %></p>
+  <table class="table table-striped">
     <tr class="header">
       <th>#</th>
       <th>Name</th>
-      <th>lat, lng</th>
+      <th>Address</th>
       <th>status</th>
       <th>Action</th>
     </tr>
@@ -14,7 +17,7 @@
       <tr>
         <td> <%= o.id %> </td>
         <td> <%= o.name %></td>
-        <td> <%= o.lat %>, <%=o.lng %></td>
+        <td> <%= o.address %></td>
         <td><%= o.status %></td>
         <td class="actions">
           <%= link_to("Show", order_path(o), :class => 'action_show') %>

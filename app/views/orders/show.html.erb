@@ -3,7 +3,7 @@
 <div class="subjects show">
   <h2>Show Order</h2>
 
-  <table class="table" summary="Order detail view">
+  <table class="table-sm table-bordered" summary="Order detail view">
     <tr>
       <th>Name</th>
       <td><%= @order.name %></td>
@@ -12,7 +12,10 @@
       <th>Location</th>
       <td><%= @order.lat %> <%= @order.lng %></td>
     </tr>
-
+    <tr>
+      <th>Address</th>
+      <td><%= @order.address%></td>
+    </tr>
     <tr>
       <th>Created</th>
       <td><%= @order.created_at %></td>
@@ -22,5 +25,4 @@
       <td><%= @order.updated_at %></td>
     </tr>
   </table>
-
 </div>

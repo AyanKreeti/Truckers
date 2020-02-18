@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 for i in 0..10 do
-  Order.create(name: Faker::Lorem.word, lat: Faker::Number.decimal(l_digits: 2), lng: Faker::Number.decimal(l_digits: 2), status: "created")
+  Order.create(name: Faker::Lorem.word, lat: Faker::Number.decimal(l_digits: 2), lng: Faker::Number.decimal(l_digits: 2), status: "created", address: Faker::Address.city)
 end
 
 for i in 0..3 do

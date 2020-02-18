@@ -1,9 +1,10 @@
+
 <div class="container-fluid w-50">
   <h1>Schedules</h1>
-  <p>Find all the schedules!</p>
+  <p>Find all the schedules! <%= link_to("Create Schedule", new_schedule_path, :class => 'btn-primary') %> </p>
 
-  <table class="table">
-    <tr class="header">
+  <table class="table table-hover table-bordered">
+    <tr class="header thead-dark">
       <th>#</th>
       <th>Trucker id</th>
       <th>Schedule Name</th>
