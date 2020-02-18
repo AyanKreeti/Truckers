@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'orders#index'
 
+  resources :truckers, only: [:index]
+
   resources :orders
   
   resources :schedules
@@ -10,6 +12,9 @@ Rails.application.routes.draw do
   namespace :api, format: :json do
     resources :schedules, only: [] do
       get 'current_schedule', on: :collection
+    end
+    resources :deliveries, only: [] do
+      get 'schedule_orders', on: :collection
     end
   end
 
