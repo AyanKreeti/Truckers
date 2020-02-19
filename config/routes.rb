@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'orders#index'
+  root 'deliveries#new'
 
-  resources :truckers, only: [:index]
+  resources :truckers
 
   resources :orders
   
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     end
     resources :deliveries, only: [] do
       get 'schedule_orders', on: :collection
+    end
+    resources :truckers, only: [] do
+      get 'truckers_list', on: :collection
     end
   end
 

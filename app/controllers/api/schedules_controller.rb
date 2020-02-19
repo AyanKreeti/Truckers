@@ -9,7 +9,4 @@ class Api::SchedulesController < ApplicationController
     render json: schedules, adapter: :json
   end
 
-  def schedule_params
-    params.permit(:trucker_id)
-  end
 end

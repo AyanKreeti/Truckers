@@ -24,6 +24,7 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
+    @assigned_orders = Delivery.where(schedule_id: params[:id])
   end
 
   def schedule_params

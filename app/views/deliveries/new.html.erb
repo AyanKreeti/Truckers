@@ -1,14 +1,14 @@
 <div class="container">
   <h1>Orders</h1>
   <p>Find all unassigned orders!</p>
-<%= form_tag(deliveries_path, method: :post, class: 'form-group w-50') do %>
+<%= form_tag(deliveries_path, method: :post, class: 'form-group') do %>
   <table class="table table-hover">
     <tr class="header thead-dark">
-      <th>#</th>
+      <th>Order Id</th>
       <th>Name</th>
       <th>Address</th>
-      <th>lat, lng</th>
-      <th>status</th>
+      <th>Lat, Lng</th>
+      <th>Status</th>
       <th>Action</th>
       <th>Add</th>
     </tr>
@@ -35,20 +35,22 @@
 </div>
 
 <div class="container">
-    <h1>Orders</h1>
+  <button class="btn btn-warning" type="button" onclick="window.location.href = '/deliveries';">Click to see all Schedule Orders</button>
     <p>Find all Assigned orders!</p>
   <table class="table table-bordered table-success">
       <tr class="header thead-dark">
-        <th>#</th>
-        <th>status</th>
+        <th>Order Id</th>
+        <th>Status</th>
         <th>Schedule id</th>
+        <th>Sequence</th>
       </tr>
 
       <% @assigned_orders.each do |o| %>
         <tr class = "assigned_orders">
-          <td> <%= o.id %> </td>
+          <td> <%= o.order_id %> </td>
           <td><%= o.status %></td>
           <td class = "assigned_order_id"><%= o.schedule_id %></td>
+          <td><%= o.sequence %></td>
         </tr>
       <% end %>
     </table>

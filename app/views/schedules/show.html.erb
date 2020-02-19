@@ -1,0 +1,20 @@
+<div class="container">
+  <p>Find all Assigned orders for Schedule <%= @schedule.schedule_name %></p>
+  <table class="table table-bordered table-success">
+      <tr class="header thead-dark">
+        <th>Order Id</th>
+        <th>Status</th>
+        <th>Schedule id</th>
+        <th>Sequence</th>
+      </tr>
+
+      <% @assigned_orders.each do |o| %>
+        <tr class = "assigned_orders">
+          <td> <%= o.order_id %> </td>
+          <td><%= o.status %></td>
+          <td class = "assigned_order_id"><%= o.schedule_id %></td>
+          <td><%= o.sequence %></td>
+        </tr>
+      <% end %>
+    </table>
+</div>

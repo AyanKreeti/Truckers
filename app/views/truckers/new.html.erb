@@ -1,0 +1,16 @@
+<%= link_to("<< Back to List", truckers_path, :class => 'back-link') %>
+
+<div class="container-fluid">
+  <h2>Create A Trucker</h2>
+
+  <%= form_tag(truckers_path, method: :post, class: 'form-group w-25') do %>
+  
+    <%= label_tag 'Name' %><%= text_field_tag(:name, nil, required:true, class: 'form-control') %></br>
+   
+    <div class="btn btn-primary">
+
+      <%= submit_tag("Create Trucker", class: "btn btn-primary") %>
+    </div>
+
+  <% end %>
+</div>
