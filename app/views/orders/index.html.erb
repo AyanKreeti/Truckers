@@ -9,7 +9,9 @@
       <th>#</th>
       <th>Name</th>
       <th>Address</th>
-      <th>status</th>
+      <th>Lat, Lng</th>
+      <th>Status</th>
+      <th>Schedule Id</th>
       <th>Action</th>
     </tr>
 
@@ -18,7 +20,9 @@
         <td> <%= o.id %> </td>
         <td> <%= o.name %></td>
         <td> <%= o.address %></td>
+        <td> <%= o.lat %>, <%=o.lng %></td>
         <td><%= o.status %></td>
+        <td><%= o.schedule_id %></td>
         <td class="actions">
           <%= link_to("Show", order_path(o), :class => 'action_show') %>
         </td>

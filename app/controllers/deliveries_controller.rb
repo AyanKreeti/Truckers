@@ -5,9 +5,10 @@ class DeliveriesController < ApplicationController
   end
 
   def new
-  
     @assigned_orders = Delivery.where(status: "pending")
-    @orders = Order.where(status: "created")
+    @orders = Order.joins("LEFT JOIN deliveries ON orders.id = deliveries.order_id").
+    select('orders.id, orders.name, orders.address, orders.lat, orders.lng, deliveries.status, deliveries.schedule_id')
+
     @schedules = Schedule.all
     @delivery = Delivery.new
   end

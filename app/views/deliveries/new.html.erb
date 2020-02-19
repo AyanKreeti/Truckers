@@ -1,6 +1,9 @@
 <div class="container">
   <h1>Orders</h1>
-  <p>Find all unassigned orders!</p>
+  <p>Find all unassigned orders!
+    <button type="button" id="open-modal" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="float: right;">Set to Schedule</button>
+  </p>
+  </br>
 <%= form_tag(deliveries_path, method: :post, class: 'form-group') do %>
   <table class="table table-hover">
     <tr class="header thead-dark">
@@ -9,6 +12,7 @@
       <th>Address</th>
       <th>Lat, Lng</th>
       <th>Status</th>
+      <th>Schedule Id</th>
       <th>Action</th>
       <th>Add</th>
     </tr>
@@ -20,21 +24,50 @@
         <td> <%= o.address %></td>
         <td> <%= o.lat %>, <%=o.lng %></td>
         <td><%= o.status %></td>
+        <td><%= o.schedule_id %></td>
         <td class="actions">
           <%= link_to("Show", order_path(o), :class => 'action_show') %>
         </td>
         <td>
-        <%= check_box_tag('order_ids[]', o.id, false, class: "order_checkbox") %></td>
+        <%= check_box_tag('order_ids[]', o.id, false, class: "order_checkbox", disabled: !o.schedule_id.nil?) %></td>
       </tr>
     <% end %>
   </table>
-    <%= select_tag :schedule_id, options_from_collection_for_select(@schedules, "id", "schedule_name"), class: "form-control", required: true, prompt: "Please select a Schedule" %></br>
-    <%= submit_tag "Set Schedule", class: "btn btn-primary", id: "schedule-btn", disabled: true, "data-disable-with": "Please wait.." %>
-  <% end %>
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title">Set Schedule</h4><button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <%= select_tag :schedule_id, options_from_collection_for_select(@schedules, "id", "schedule_name"), class: "form-control", required: true, prompt: "Please select a Schedule" %></br>
+        <%= submit_tag "Set Schedule", class: "btn btn-primary", id: "schedule-btn", disabled: true, "data-disable-with": "Please wait.." %>
+ 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 
 </div>
 
-<div class="container">
+
+
+
+</div>
+<% end %>
+
+<%
+=begin%>
+ <div class="container">
   <button class="btn btn-warning" type="button" onclick="window.location.href = '/deliveries';">Click to see all Schedule Orders</button>
     <p>Find all Assigned orders!</p>
   <table class="table table-bordered table-success">
@@ -54,5 +87,7 @@
         </tr>
       <% end %>
     </table>
-</div>
+</div> 
+<%
+=end%>
 

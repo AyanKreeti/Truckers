@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
   
   def index
-    @orders = Order.all
+    # @orders = Order.all
+    @orders = Order.joins("LEFT JOIN deliveries ON orders.id = deliveries.order_id").
+    select('orders.id, orders.name, orders.address, orders.lat, orders.lng, deliveries.status, deliveries.schedule_id')
   end
 
   def new
