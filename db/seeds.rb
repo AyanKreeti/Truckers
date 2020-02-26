@@ -5,8 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+lat = 22.572983
+lng =  88.433388
 for i in 0..10 do
-  Order.create(name: Faker::Lorem.word, lat: Faker::Number.decimal(l_digits: 2), lng: Faker::Number.decimal(l_digits: 2), status: "created", address: Faker::Address.city)
+  Order.create(name: Faker::Name.unique.name, lat: lat + 0.00101, lng: lng + 0.00101, status: "created", address: Faker::Address.city)
 end
 
 for i in 0..3 do

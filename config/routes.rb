@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     end
     resources :deliveries, only: [] do
       get 'schedule_orders', on: :collection
+
+      patch 'update_order_status', on: :collection
     end
     resources :truckers, only: [] do
       get 'truckers_list', on: :collection
