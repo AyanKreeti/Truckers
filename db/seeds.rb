@@ -8,8 +8,8 @@
 lat = 22.572983
 lng = 88.433388
 for i in 0..10 do
-  lat=lat + 0.101110
-  lng=lng + 0.101001
+  lat=lat + 0.001110
+  lng=lng + 0.011001
   Order.create(name: Faker::Name.unique.name, lat: lat, lng: lng, status: "created", address: Faker::Address.city)
 end
 
