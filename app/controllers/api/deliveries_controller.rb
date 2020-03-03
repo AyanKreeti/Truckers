@@ -6,6 +6,9 @@ class Api::DeliveriesController < ApplicationController
     # order_sequence = Delivery.where(schedule_id: params[:id]).where(status: "pending")
     order_sequence = Delivery.where(schedule_id: params[:id])
     orders = Order.where(id: order_sequence.collect{ |x| x.order_id})
+    # binding.pry
+    orders = Delivery.order_tsp(orders)
+    # binding.pry
     render json: orders, adapter: :json
   end
 

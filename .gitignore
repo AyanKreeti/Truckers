@@ -1,2 +1,7 @@
 node_modules
 /tmp
+/or-tools_Ubuntu-18.04-64bit_v7.5.7466/*.log
+/or-tools_Ubuntu-18.04-64bit_v7.5.7466/examples/
+
+
+# git commit -m "added TSP implementation"
