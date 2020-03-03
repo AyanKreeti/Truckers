@@ -32,9 +32,9 @@ class Delivery < ApplicationRecord
     # system('ls')
     lstr= "bash"+" tsp_helper.sh #{lst}"
     # system(lstr)
-    # binding.pry
-    details = Open3.capture3(lstr)
     
+    details = Open3.capture3(lstr)
+    # binding.pry
     route_details = details[1].split("\nINFO")[4].split(": ")[1]
     route_all = route_details.split("\n")[0]
     final_route = route_all.split("->")
