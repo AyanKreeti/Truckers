@@ -1,0 +1,892 @@
+# Logfile created on 2020-03-04 16:36:36 +0530 by logger.rb/66358
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-04 16:36:36 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [da4a2bd1] Running /usr/bin/env mkdir -p /tmp as deploy@18.216.15.102
+ DEBUG [da4a2bd1] Command: /usr/bin/env mkdir -p /tmp
+  INFO [da4a2bd1] Finished in 3.969 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-testDeploy-production-Arnab.sh 0.0%
+  INFO Uploading /tmp/git-ssh-testDeploy-production-Arnab.sh 100.0%
+  INFO [73da7dcc] Running /usr/bin/env chmod 700 /tmp/git-ssh-testDeploy-production-Arnab.sh as deploy@18.216.15.102
+ DEBUG [73da7dcc] Command: /usr/bin/env chmod 700 /tmp/git-ssh-testDeploy-production-Arnab.sh
+  INFO [73da7dcc] Finished in 0.928 seconds with exit status 0 (successful).
+  INFO [1e47425b] Running /usr/bin/env git ls-remote git@github.com:AyanKreeti/Truckers.git HEAD as deploy@18.216.15.102
+ DEBUG [1e47425b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-testDeploy-production-Arnab.sh" ; /usr/bin/env git ls-remote git@github.com:AyanKreeti/Truckers.git HEAD )
+ DEBUG [1e47425b] 	Warning: Permanently added 'github.com,140.82.114.3' (RSA) to the list of known hosts.
+ DEBUG [1e47425b] 	
+ DEBUG [1e47425b] 	1e81ff87c692a2e6fbc5dd4ea1e863f97ed46611	HEAD
+  INFO [1e47425b] Finished in 1.906 seconds with exit status 0 (successful).
+  INFO [9c7dd6d8] Running /usr/bin/env mkdir -p /var/deploy/deploy/trucker/shared /var/deploy/deploy/trucker/releases as deploy@18.216.15.102
+ DEBUG [9c7dd6d8] Command: /usr/bin/env mkdir -p /var/deploy/deploy/trucker/shared /var/deploy/deploy/trucker/releases
+  INFO [9c7dd6d8] Finished in 0.594 seconds with exit status 0 (successful).
+  INFO [5479f9b5] Running /usr/bin/env mkdir -p /var/deploy/deploy/trucker/shared/log /var/deploy/deploy/trucker/shared/tmp/pids /var/deploy/deploy/trucker/shared/tmp/cache /var/deploy/deploy/trucker/shared/tmp/sockets /var/deploy/deploy/trucker/shared/vendor/bundle /var/deploy/deploy/trucker/shared/public/system /var/deploy/deploy/trucker/shared/public/uploads /var/deploy/deploy/trucker/shared/node_modules /var/deploy/deploy/trucker/shared/public/assets as deploy@18.216.15.102
+ DEBUG [5479f9b5] Command: /usr/bin/env mkdir -p /var/deploy/deploy/trucker/shared/log /var/deploy/deploy/trucker/shared/tmp/pids /var/deploy/deploy/trucker/shared/tmp/cache /var/deploy/deploy/trucker/shared/tmp/sockets /var/deploy/deploy/trucker/shared/vendor/bundle /var/deploy/deploy/trucker/shared/public/system /var/deploy/deploy/trucker/shared/public/uploads /var/deploy/deploy/trucker/shared/node_modules /var/deploy/deploy/trucker/shared/public/assets
+  INFO [5479f9b5] Finished in 0.923 seconds with exit status 0 (successful).
+ DEBUG [14f4b2e5] Running [ -f /var/deploy/deploy/trucker/shared/puma.rb ] as deploy@18.216.15.102
+ DEBUG [14f4b2e5] Command: [ -f /var/deploy/deploy/trucker/shared/puma.rb ]
+ DEBUG [14f4b2e5] Finished in 0.926 seconds with exit status 1 (failed).
+  WARN puma.rb NOT FOUND!
+ DEBUG Uploading /var/deploy/deploy/trucker/shared/puma.rb 0.0%
+  INFO Uploading /var/deploy/deploy/trucker/shared/puma.rb 100.0%
+  INFO puma.rb generated
+ DEBUG [effc6516] Running [ -f /var/deploy/deploy/trucker/current/REVISION ] as deploy@18.216.15.102
+ DEBUG [effc6516] Command: [ -f /var/deploy/deploy/trucker/current/REVISION ]
+ DEBUG [effc6516] Finished in 0.925 seconds with exit status 1 (failed).
+ DEBUG [a6ba5dea] Running [ -f /var/deploy/deploy/trucker/repo/HEAD ] as deploy@18.216.15.102
+ DEBUG [a6ba5dea] Command: [ -f /var/deploy/deploy/trucker/repo/HEAD ]
+ DEBUG [a6ba5dea] Finished in 0.926 seconds with exit status 1 (failed).
+ DEBUG [00f0f1c8] Running if test ! -d /var/deploy/deploy/trucker; then echo "Directory does not exist '/var/deploy/deploy/trucker'" 1>&2; false; fi as deploy@18.216.15.102
+ DEBUG [00f0f1c8] Command: if test ! -d /var/deploy/deploy/trucker; then echo "Directory does not exist '/var/deploy/deploy/trucker'" 1>&2; false; fi
+ DEBUG [00f0f1c8] Finished in 0.927 seconds with exit status 0 (successful).
+  INFO [70c759b9] Running /usr/bin/env git clone --mirror git@github.com:AyanKreeti/Truckers.git /var/deploy/deploy/trucker/repo as deploy@18.216.15.102
+ DEBUG [70c759b9] Command: cd /var/deploy/deploy/trucker && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-testDeploy-production-Arnab.sh" ; /usr/bin/env git clone --mirror git@github.com:AyanKreeti/Truckers.git /var/deploy/deploy/trucker/repo )
+ DEBUG [70c759b9] 	Cloning into bare repository '/var/deploy/deploy/trucker/repo'...
+ DEBUG [70c759b9] 	
+ DEBUG [70c759b9] 	remote: Enumerating objects: 1706, done.[K
+ DEBUG [70c759b9] 	
+ DEBUG [70c759b9] 	remote: Counting objects:   0% (1/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:   1% (18/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:   2% (35/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:   3% (52/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:   4% (69/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:   5% (86/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:   6% (103/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:   7% (120/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:   8% (137/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:   9% (154/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  10% (171/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  11% (188/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  12% (205/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  13% (222/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  14% (239/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  15% (256/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  16% (273/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  17% (291/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  18% (308/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  19% (325/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  20% (342/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  21% (359/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  22% (376/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  23% (393/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  24% (410/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  25% (427/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  26% (444/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  27% (461/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  28% (478/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  29% (495/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  30% (512/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  31% (529/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  32% (546/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  33% (563/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  34% (581/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  35% (598/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  36% (615/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  37% (632/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  38% (649/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  39% (666/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  40% (683/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  41% (700/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  42% (717/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  43% (734/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  44% (751/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  45% (768/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  46% (785/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  47% (802/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  48% (819/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  49% (836/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  50% (853/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  51% (871/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  52% (888/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  53% (905/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  54% (922/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  55% (939/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  56% (956/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  57% (973/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  58% (990/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  59% (1007/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  60% (1024/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  61% (1041/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  62% (1058/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  63% (1075/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  64% (1092/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  65% (1109/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  66% (1126/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  67% (1144/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  68% (1161/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  69% (1178/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  70% (1195/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  71% (1212/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  72% (1229/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  73% (1246/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  74% (1263/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  75% (1280/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  76% (1297/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  77% (1314/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  78% (1331/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  79% (1348/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  80% (1365/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  81% (1382/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  82% (1399/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  83% (1416/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  84% (1434/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  85% (1451/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  86% (1468/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  87% (1485/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  88% (1502/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  89% (1519/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  90% (1536/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  91% (1553/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  92% (1570/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  93% (1587/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  94% (1604/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  95% (1621/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  96% (1638/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  97% (1655/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  98% (1672/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects:  99% (1689/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects: 100% (1706/1706)[K
+ DEBUG [70c759b9] 	remote: Counting objects: 100% (1706/1706), done.[K
+ DEBUG [70c759b9] 	
+ DEBUG [70c759b9] 	remote: Compressing objects:   0% (1/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:   1% (13/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:   2% (26/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:   3% (39/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:   4% (52/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:   5% (65/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:   6% (77/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:   7% (90/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:   8% (103/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:   9% (116/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  10% (129/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  11% (142/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  12% (154/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  13% (167/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  14% (180/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  15% (193/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  16% (206/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  17% (219/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  18% (231/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  19% (244/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  20% (257/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  21% (270/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  22% (283/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  23% (296/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  24% (308/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  25% (321/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  26% (334/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  27% (347/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  28% (360/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  29% (373/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  30% (385/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  31% (398/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  32% (411/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  33% (424/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  34% (437/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  35% (450/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  36% (462/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  37% (475/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  38% (488/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  39% (501/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  40% (514/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  41% (527/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  42% (539/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  43% (552/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  44% (565/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  45% (578/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  46% (591/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  47% (604/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  48% (616/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  49% (629/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  50% (642/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  51% (655/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  52% (668/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  53% (680/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  54% (693/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  55% (706/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  56% (719/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  57% (732/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  58% (745/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  59% (757/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  60% (770/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  61% (783/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  62% (796/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  63% (809/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  64% (822/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  65% (834/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  66% (847/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  67% (860/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  68% (873/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  69% (886/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  70% (899/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  71% (911/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  72% (924/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  73% (937/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  74% (950/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  75% (963/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  76% (976/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  77% (988/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  78% (1001/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  79% (1014/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  80% (1027/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  81% (1040/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  82% (1053/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  83% (1065/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  84% (1078/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  85% (1091/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  86% (1104/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  87% (1117/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  88% (1130/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  89% (1142/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  90% (1155/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  91% (1168/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  92% (1181/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  93% (1194/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  94% (1207/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  95% (1219/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  96% (1232/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  97% (1245/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  98% (1258/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects:  99% (1271/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects: 100% (1283/1283)[K
+ DEBUG [70c759b9] 	remote: Compressing objects: 100% (1283/1283), done.[K
+ DEBUG [70c759b9] 	
+ DEBUG [70c759b9] 	Receiving objects:   0% (1/1706)   
+ DEBUG [70c759b9] 	Receiving objects:   1% (18/1706)   
+ DEBUG [70c759b9] 	Receiving objects:   2% (35/1706)   
+ DEBUG [70c759b9] 	Receiving objects:   3% (52/1706)   
+ DEBUG [70c759b9] 	Receiving objects:   4% (69/1706)   
+ DEBUG [70c759b9] 	Receiving objects:   5% (86/1706)   
+ DEBUG [70c759b9] 	Receiving objects:   6% (103/1706)   
+ DEBUG [70c759b9] 	Receiving objects:   7% (120/1706)   
+ DEBUG [70c759b9] 	Receiving objects:   8% (137/1706)   
+ DEBUG [70c759b9] 	Receiving objects:   9% (154/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  10% (171/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  11% (188/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  12% (205/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  13% (222/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  14% (239/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  15% (256/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  16% (273/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  17% (291/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  18% (308/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  19% (325/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  20% (342/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  21% (359/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  22% (376/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  23% (393/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  24% (410/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  25% (427/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  26% (444/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  27% (461/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  28% (478/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  29% (495/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  30% (512/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  31% (529/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  32% (546/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  33% (563/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  34% (581/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  35% (598/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  36% (615/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  37% (632/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  38% (649/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  39% (666/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  40% (683/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  41% (700/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  42% (717/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  43% (734/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  44% (751/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  45% (768/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  46% (785/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  47% (802/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  48% (819/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  49% (836/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  50% (853/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  51% (871/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  52% (888/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  53% (905/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  54% (922/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  55% (939/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  56% (956/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  57% (973/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  58% (990/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  59% (1007/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  60% (1024/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  61% (1041/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  62% (1058/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  63% (1075/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  64% (1092/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  65% (1109/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  66% (1126/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  67% (1144/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  68% (1161/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  69% (1178/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  70% (1195/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  71% (1212/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  72% (1229/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  73% (1246/1706)   
+ DEBUG [70c759b9] 	Receiving objects:  74% (1263/1706), 6.08 MiB | 12.14 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  75% (1280/1706), 6.08 MiB | 12.14 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  76% (1297/1706), 6.08 MiB | 12.14 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  77% (1314/1706), 6.08 MiB | 12.14 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  78% (1331/1706), 6.08 MiB | 12.14 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  78% (1339/1706), 12.55 MiB | 12.55 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  79% (1348/1706), 19.23 MiB | 12.81 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  80% (1365/1706), 19.23 MiB | 12.81 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  81% (1382/1706), 19.23 MiB | 12.81 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  81% (1391/1706), 31.56 MiB | 15.77 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  82% (1399/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  83% (1416/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  84% (1434/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  85% (1451/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  86% (1468/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  87% (1485/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  88% (1502/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  89% (1519/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	remote: Total 1706 (delta 446), reused 1613 (delta 362), pack-reused 0[K
+ DEBUG [70c759b9] 	
+ DEBUG [70c759b9] 	Receiving objects:  90% (1536/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  91% (1553/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  92% (1570/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  93% (1587/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  94% (1604/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  95% (1621/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  96% (1638/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  97% (1655/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  98% (1672/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects:  99% (1689/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects: 100% (1706/1706), 44.37 MiB | 17.74 MiB/s   
+ DEBUG [70c759b9] 	Receiving objects: 100% (1706/1706), 46.86 MiB | 18.04 MiB/s, done.
+ DEBUG [70c759b9] 	
+ DEBUG [70c759b9] 	Resolving deltas:   0% (0/446)   
+ DEBUG [70c759b9] 	Resolving deltas:   4% (18/446)   
+ DEBUG [70c759b9] 	Resolving deltas:   5% (23/446)   
+ DEBUG [70c759b9] 	Resolving deltas:   6% (30/446)   
+ DEBUG [70c759b9] 	Resolving deltas:   8% (40/446)   
+ DEBUG [70c759b9] 	Resolving deltas:   9% (41/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  11% (52/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  12% (56/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  13% (62/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  14% (63/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  15% (68/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  16% (73/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  17% (77/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  18% (82/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  19% (85/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  21% (96/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  22% (100/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  23% (104/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  24% (109/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  25% (114/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  26% (116/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  27% (122/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  28% (128/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  29% (130/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  30% (134/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  31% (139/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  32% (146/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  35% (157/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  36% (161/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  37% (166/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  38% (170/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  39% (174/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  40% (180/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  41% (184/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  42% (188/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  43% (193/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  44% (197/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  45% (201/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  46% (206/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  47% (212/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  48% (215/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  49% (221/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  50% (224/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  51% (228/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  52% (232/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  53% (237/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  56% (250/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  57% (255/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  58% (259/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  59% (266/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  60% (268/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  61% (273/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  62% (277/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  63% (281/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  64% (286/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  65% (290/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  66% (295/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  67% (299/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  68% (304/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  69% (308/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  71% (319/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  72% (322/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  73% (326/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  74% (331/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  75% (335/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  76% (340/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  77% (344/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  78% (350/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  91% (406/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  96% (431/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  97% (435/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  98% (438/446)   
+ DEBUG [70c759b9] 	Resolving deltas:  99% (443/446)   
+ DEBUG [70c759b9] 	Resolving deltas: 100% (446/446)   
+ DEBUG [70c759b9] 	Resolving deltas: 100% (446/446), done.
+ DEBUG [70c759b9] 	
+  INFO [70c759b9] Finished in 6.529 seconds with exit status 0 (successful).
+ DEBUG [ec03fc59] Running if test ! -d /var/deploy/deploy/trucker/repo; then echo "Directory does not exist '/var/deploy/deploy/trucker/repo'" 1>&2; false; fi as deploy@18.216.15.102
+ DEBUG [ec03fc59] Command: if test ! -d /var/deploy/deploy/trucker/repo; then echo "Directory does not exist '/var/deploy/deploy/trucker/repo'" 1>&2; false; fi
+ DEBUG [ec03fc59] Finished in 0.592 seconds with exit status 0 (successful).
+  INFO [54a74160] Running /usr/bin/env git remote set-url origin git@github.com:AyanKreeti/Truckers.git as deploy@18.216.15.102
+ DEBUG [54a74160] Command: cd /var/deploy/deploy/trucker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-testDeploy-production-Arnab.sh" ; /usr/bin/env git remote set-url origin git@github.com:AyanKreeti/Truckers.git )
+  INFO [54a74160] Finished in 0.930 seconds with exit status 0 (successful).
+  INFO [696dde45] Running /usr/bin/env git remote update --prune as deploy@18.216.15.102
+ DEBUG [696dde45] Command: cd /var/deploy/deploy/trucker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-testDeploy-production-Arnab.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [696dde45] 	Fetching origin
+ DEBUG [696dde45] 	
+ DEBUG [696dde45] 	Warning: Permanently added the RSA host key for IP address '140.82.113.4' to the list of known hosts.
+ DEBUG [696dde45] 	
+  INFO [696dde45] Finished in 2.133 seconds with exit status 0 (successful).
+ DEBUG [d3d76d47] Running if test ! -d /var/deploy/deploy/trucker/repo; then echo "Directory does not exist '/var/deploy/deploy/trucker/repo'" 1>&2; false; fi as deploy@18.216.15.102
+ DEBUG [d3d76d47] Command: if test ! -d /var/deploy/deploy/trucker/repo; then echo "Directory does not exist '/var/deploy/deploy/trucker/repo'" 1>&2; false; fi
+ DEBUG [d3d76d47] Finished in 0.592 seconds with exit status 0 (successful).
+  INFO [973ced56] Running /usr/bin/env mkdir -p /var/deploy/deploy/trucker/releases/20200304110656 as deploy@18.216.15.102
+ DEBUG [973ced56] Command: cd /var/deploy/deploy/trucker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-testDeploy-production-Arnab.sh" ; /usr/bin/env mkdir -p /var/deploy/deploy/trucker/releases/20200304110656 )
+  INFO [973ced56] Finished in 0.928 seconds with exit status 0 (successful).
+  INFO [a6024772] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/deploy/deploy/trucker/releases/20200304110656 as deploy@18.216.15.102
+ DEBUG [a6024772] Command: cd /var/deploy/deploy/trucker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-testDeploy-production-Arnab.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/deploy/deploy/trucker/releases/20200304110656 )
+  INFO [a6024772] Finished in 1.960 seconds with exit status 0 (successful).
+ DEBUG [59def5c1] Running if test ! -d /var/deploy/deploy/trucker/repo; then echo "Directory does not exist '/var/deploy/deploy/trucker/repo'" 1>&2; false; fi as deploy@18.216.15.102
+ DEBUG [59def5c1] Command: if test ! -d /var/deploy/deploy/trucker/repo; then echo "Directory does not exist '/var/deploy/deploy/trucker/repo'" 1>&2; false; fi
+ DEBUG [59def5c1] Finished in 0.593 seconds with exit status 0 (successful).
+ DEBUG [3594323a] Running /usr/bin/env git rev-list --max-count=1 master as deploy@18.216.15.102
+ DEBUG [3594323a] Command: cd /var/deploy/deploy/trucker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-testDeploy-production-Arnab.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [3594323a] 	1e81ff87c692a2e6fbc5dd4ea1e863f97ed46611
+ DEBUG [3594323a] 	
+ DEBUG [3594323a] Finished in 0.930 seconds with exit status 0 (successful).
+ DEBUG [37a7de59] Running if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi as deploy@18.216.15.102
+ DEBUG [37a7de59] Command: if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi
+ DEBUG [37a7de59] Finished in 0.592 seconds with exit status 0 (successful).
+  INFO [cd583647] Running /usr/bin/env echo "1e81ff87c692a2e6fbc5dd4ea1e863f97ed46611" > REVISION as deploy@18.216.15.102
+ DEBUG [cd583647] Command: cd /var/deploy/deploy/trucker/releases/20200304110656 && /usr/bin/env echo "1e81ff87c692a2e6fbc5dd4ea1e863f97ed46611" > REVISION
+  INFO [cd583647] Finished in 0.929 seconds with exit status 0 (successful).
+  INFO [6d56df12] Running /usr/bin/env mkdir -p /var/deploy/deploy/trucker/releases/20200304110656 /var/deploy/deploy/trucker/releases/20200304110656/tmp /var/deploy/deploy/trucker/releases/20200304110656/vendor /var/deploy/deploy/trucker/releases/20200304110656/public as deploy@18.216.15.102
+ DEBUG [6d56df12] Command: /usr/bin/env mkdir -p /var/deploy/deploy/trucker/releases/20200304110656 /var/deploy/deploy/trucker/releases/20200304110656/tmp /var/deploy/deploy/trucker/releases/20200304110656/vendor /var/deploy/deploy/trucker/releases/20200304110656/public
+  INFO [6d56df12] Finished in 0.923 seconds with exit status 0 (successful).
+ DEBUG [0ca54914] Running [ -L /var/deploy/deploy/trucker/releases/20200304110656/log ] as deploy@18.216.15.102
+ DEBUG [0ca54914] Command: [ -L /var/deploy/deploy/trucker/releases/20200304110656/log ]
+ DEBUG [0ca54914] Finished in 0.926 seconds with exit status 1 (failed).
+ DEBUG [38ee70a0] Running [ -d /var/deploy/deploy/trucker/releases/20200304110656/log ] as deploy@18.216.15.102
+ DEBUG [38ee70a0] Command: [ -d /var/deploy/deploy/trucker/releases/20200304110656/log ]
+ DEBUG [38ee70a0] Finished in 0.926 seconds with exit status 0 (successful).
+  INFO [c66de37b] Running /usr/bin/env rm -rf /var/deploy/deploy/trucker/releases/20200304110656/log as deploy@18.216.15.102
+ DEBUG [c66de37b] Command: /usr/bin/env rm -rf /var/deploy/deploy/trucker/releases/20200304110656/log
+  INFO [c66de37b] Finished in 0.929 seconds with exit status 0 (successful).
+  INFO [d1a6bb0a] Running /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/log /var/deploy/deploy/trucker/releases/20200304110656/log as deploy@18.216.15.102
+ DEBUG [d1a6bb0a] Command: /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/log /var/deploy/deploy/trucker/releases/20200304110656/log
+  INFO [d1a6bb0a] Finished in 0.927 seconds with exit status 0 (successful).
+ DEBUG [dad84c7a] Running [ -L /var/deploy/deploy/trucker/releases/20200304110656/tmp/pids ] as deploy@18.216.15.102
+ DEBUG [dad84c7a] Command: [ -L /var/deploy/deploy/trucker/releases/20200304110656/tmp/pids ]
+ DEBUG [dad84c7a] Finished in 0.926 seconds with exit status 1 (failed).
+ DEBUG [d4895342] Running [ -d /var/deploy/deploy/trucker/releases/20200304110656/tmp/pids ] as deploy@18.216.15.102
+ DEBUG [d4895342] Command: [ -d /var/deploy/deploy/trucker/releases/20200304110656/tmp/pids ]
+ DEBUG [d4895342] Finished in 0.927 seconds with exit status 1 (failed).
+  INFO [7e5da3e2] Running /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/tmp/pids /var/deploy/deploy/trucker/releases/20200304110656/tmp/pids as deploy@18.216.15.102
+ DEBUG [7e5da3e2] Command: /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/tmp/pids /var/deploy/deploy/trucker/releases/20200304110656/tmp/pids
+  INFO [7e5da3e2] Finished in 0.929 seconds with exit status 0 (successful).
+ DEBUG [43b05e28] Running [ -L /var/deploy/deploy/trucker/releases/20200304110656/tmp/cache ] as deploy@18.216.15.102
+ DEBUG [43b05e28] Command: [ -L /var/deploy/deploy/trucker/releases/20200304110656/tmp/cache ]
+ DEBUG [43b05e28] Finished in 0.926 seconds with exit status 1 (failed).
+ DEBUG [2b411376] Running [ -d /var/deploy/deploy/trucker/releases/20200304110656/tmp/cache ] as deploy@18.216.15.102
+ DEBUG [2b411376] Command: [ -d /var/deploy/deploy/trucker/releases/20200304110656/tmp/cache ]
+ DEBUG [2b411376] Finished in 0.927 seconds with exit status 1 (failed).
+  INFO [bb4cbe65] Running /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/tmp/cache /var/deploy/deploy/trucker/releases/20200304110656/tmp/cache as deploy@18.216.15.102
+ DEBUG [bb4cbe65] Command: /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/tmp/cache /var/deploy/deploy/trucker/releases/20200304110656/tmp/cache
+  INFO [bb4cbe65] Finished in 0.929 seconds with exit status 0 (successful).
+ DEBUG [f2969831] Running [ -L /var/deploy/deploy/trucker/releases/20200304110656/tmp/sockets ] as deploy@18.216.15.102
+ DEBUG [f2969831] Command: [ -L /var/deploy/deploy/trucker/releases/20200304110656/tmp/sockets ]
+ DEBUG [f2969831] Finished in 0.925 seconds with exit status 1 (failed).
+ DEBUG [d3f01c34] Running [ -d /var/deploy/deploy/trucker/releases/20200304110656/tmp/sockets ] as deploy@18.216.15.102
+ DEBUG [d3f01c34] Command: [ -d /var/deploy/deploy/trucker/releases/20200304110656/tmp/sockets ]
+ DEBUG [d3f01c34] Finished in 0.928 seconds with exit status 1 (failed).
+  INFO [b6fac5b0] Running /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/tmp/sockets /var/deploy/deploy/trucker/releases/20200304110656/tmp/sockets as deploy@18.216.15.102
+ DEBUG [b6fac5b0] Command: /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/tmp/sockets /var/deploy/deploy/trucker/releases/20200304110656/tmp/sockets
+  INFO [b6fac5b0] Finished in 0.929 seconds with exit status 0 (successful).
+ DEBUG [f7dd7a78] Running [ -L /var/deploy/deploy/trucker/releases/20200304110656/vendor/bundle ] as deploy@18.216.15.102
+ DEBUG [f7dd7a78] Command: [ -L /var/deploy/deploy/trucker/releases/20200304110656/vendor/bundle ]
+ DEBUG [f7dd7a78] Finished in 0.925 seconds with exit status 1 (failed).
+ DEBUG [41efbc45] Running [ -d /var/deploy/deploy/trucker/releases/20200304110656/vendor/bundle ] as deploy@18.216.15.102
+ DEBUG [41efbc45] Command: [ -d /var/deploy/deploy/trucker/releases/20200304110656/vendor/bundle ]
+ DEBUG [41efbc45] Finished in 0.927 seconds with exit status 1 (failed).
+  INFO [62fb7ab6] Running /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/vendor/bundle /var/deploy/deploy/trucker/releases/20200304110656/vendor/bundle as deploy@18.216.15.102
+ DEBUG [62fb7ab6] Command: /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/vendor/bundle /var/deploy/deploy/trucker/releases/20200304110656/vendor/bundle
+  INFO [62fb7ab6] Finished in 0.935 seconds with exit status 0 (successful).
+ DEBUG [85bf2c39] Running [ -L /var/deploy/deploy/trucker/releases/20200304110656/public/system ] as deploy@18.216.15.102
+ DEBUG [85bf2c39] Command: [ -L /var/deploy/deploy/trucker/releases/20200304110656/public/system ]
+ DEBUG [85bf2c39] Finished in 0.927 seconds with exit status 1 (failed).
+ DEBUG [8183bbff] Running [ -d /var/deploy/deploy/trucker/releases/20200304110656/public/system ] as deploy@18.216.15.102
+ DEBUG [8183bbff] Command: [ -d /var/deploy/deploy/trucker/releases/20200304110656/public/system ]
+ DEBUG [8183bbff] Finished in 0.928 seconds with exit status 1 (failed).
+  INFO [24f3a904] Running /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/public/system /var/deploy/deploy/trucker/releases/20200304110656/public/system as deploy@18.216.15.102
+ DEBUG [24f3a904] Command: /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/public/system /var/deploy/deploy/trucker/releases/20200304110656/public/system
+  INFO [24f3a904] Finished in 0.927 seconds with exit status 0 (successful).
+ DEBUG [1c3ea6f2] Running [ -L /var/deploy/deploy/trucker/releases/20200304110656/public/uploads ] as deploy@18.216.15.102
+ DEBUG [1c3ea6f2] Command: [ -L /var/deploy/deploy/trucker/releases/20200304110656/public/uploads ]
+ DEBUG [1c3ea6f2] Finished in 0.926 seconds with exit status 1 (failed).
+ DEBUG [dce359b8] Running [ -d /var/deploy/deploy/trucker/releases/20200304110656/public/uploads ] as deploy@18.216.15.102
+ DEBUG [dce359b8] Command: [ -d /var/deploy/deploy/trucker/releases/20200304110656/public/uploads ]
+ DEBUG [dce359b8] Finished in 0.927 seconds with exit status 1 (failed).
+  INFO [6ebb1fe3] Running /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/public/uploads /var/deploy/deploy/trucker/releases/20200304110656/public/uploads as deploy@18.216.15.102
+ DEBUG [6ebb1fe3] Command: /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/public/uploads /var/deploy/deploy/trucker/releases/20200304110656/public/uploads
+  INFO [6ebb1fe3] Finished in 0.928 seconds with exit status 0 (successful).
+ DEBUG [8bee5167] Running [ -L /var/deploy/deploy/trucker/releases/20200304110656/node_modules ] as deploy@18.216.15.102
+ DEBUG [8bee5167] Command: [ -L /var/deploy/deploy/trucker/releases/20200304110656/node_modules ]
+ DEBUG [8bee5167] Finished in 0.925 seconds with exit status 1 (failed).
+ DEBUG [6befd2aa] Running [ -d /var/deploy/deploy/trucker/releases/20200304110656/node_modules ] as deploy@18.216.15.102
+ DEBUG [6befd2aa] Command: [ -d /var/deploy/deploy/trucker/releases/20200304110656/node_modules ]
+ DEBUG [6befd2aa] Finished in 0.927 seconds with exit status 1 (failed).
+  INFO [990469c9] Running /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/node_modules /var/deploy/deploy/trucker/releases/20200304110656/node_modules as deploy@18.216.15.102
+ DEBUG [990469c9] Command: /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/node_modules /var/deploy/deploy/trucker/releases/20200304110656/node_modules
+  INFO [990469c9] Finished in 0.928 seconds with exit status 0 (successful).
+ DEBUG [f4fad00c] Running [ -L /var/deploy/deploy/trucker/releases/20200304110656/public/assets ] as deploy@18.216.15.102
+ DEBUG [f4fad00c] Command: [ -L /var/deploy/deploy/trucker/releases/20200304110656/public/assets ]
+ DEBUG [f4fad00c] Finished in 0.927 seconds with exit status 1 (failed).
+ DEBUG [8d7e2d77] Running [ -d /var/deploy/deploy/trucker/releases/20200304110656/public/assets ] as deploy@18.216.15.102
+ DEBUG [8d7e2d77] Command: [ -d /var/deploy/deploy/trucker/releases/20200304110656/public/assets ]
+ DEBUG [8d7e2d77] Finished in 0.926 seconds with exit status 1 (failed).
+  INFO [716b52f5] Running /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/public/assets /var/deploy/deploy/trucker/releases/20200304110656/public/assets as deploy@18.216.15.102
+ DEBUG [716b52f5] Command: /usr/bin/env ln -s /var/deploy/deploy/trucker/shared/public/assets /var/deploy/deploy/trucker/releases/20200304110656/public/assets
+  INFO [716b52f5] Finished in 0.929 seconds with exit status 0 (successful).
+ DEBUG [acae3cd8] Running if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi as deploy@18.216.15.102
+ DEBUG [acae3cd8] Command: if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi
+ DEBUG [acae3cd8] Finished in 0.925 seconds with exit status 0 (successful).
+ DEBUG [61eeeb7a] Running /usr/bin/env bundle check --path /var/deploy/deploy/trucker/shared/bundle as deploy@18.216.15.102
+ DEBUG [61eeeb7a] Command: cd /var/deploy/deploy/trucker/releases/20200304110656 && /usr/bin/env bundle check --path /var/deploy/deploy/trucker/shared/bundle
+ DEBUG [61eeeb7a] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/var/deploy/deploy/trucker/shared/bundle'`, and stop using this flag[0m
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	[31mhttps://github.com/faker-ruby/faker.git (at master@4a0d6c5) is not yet checked
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] 	out. Run `bundle install` first.[0m
+ DEBUG [61eeeb7a] 	
+ DEBUG [61eeeb7a] Finished in 1.357 seconds with exit status 11 (failed).
+  INFO [0d05996b] Running /usr/bin/env bundle install --path /var/deploy/deploy/trucker/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@18.216.15.102
+ DEBUG [0d05996b] Command: cd /var/deploy/deploy/trucker/releases/20200304110656 && /usr/bin/env bundle install --path /var/deploy/deploy/trucker/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	[33m[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag[0m
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/var/deploy/deploy/trucker/shared/bundle'`, and stop using this flag[0m
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	[33m[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag[0m
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+ DEBUG [0d05996b] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [0d05996b] 	
+  INFO [0d05996b] Finished in 208.516 seconds with exit status 0 (successful).
+ DEBUG [2bc8ff57] Running if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi as deploy@18.216.15.102
+ DEBUG [2bc8ff57] Command: if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi
+ DEBUG [2bc8ff57] Finished in 0.928 seconds with exit status 0 (successful).
+  INFO [f02a5987] Running bundle exec rake assets:precompile as deploy@18.216.15.102
+ DEBUG [f02a5987] Command: cd /var/deploy/deploy/trucker/releases/20200304110656 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; bundle exec rake assets:precompile )
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[1myarn install v1.22.0[22m
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[2m[1/4][22m Resolving packages...
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	⠁ 
+ DEBUG [f02a5987] 	[0K
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[2m[2/4][22m Fetching packages...
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[34minfo[39m fsevents@1.2.11: The platform "linux" is incompatible with this module.
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[34minfo[39m "fsevents@1.2.11" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[2m[3/4][22m Linking dependencies...
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[33mwarning[39m " > webpack-dev-server@3.10.3" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[33mwarning[39m "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	[2m[4/4][22m Building fresh packages...
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	[2K
+ DEBUG [f02a5987] 	[1G
+ DEBUG [f02a5987] 	Done in 24.89s.
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/bin/env: 
+ DEBUG [f02a5987] 	‘ruby’
+ DEBUG [f02a5987] 	: No such file or directory
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	I, [2020-03-04T11:12:00.277575 #11427]  INFO -- : Writing /var/deploy/deploy/trucker/releases/20200304110656/public/assets/application-346b678500708f3f4e9cd72c46d1e9e54aaf76e0478b766519ac083bf93fbcff.css
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	I, [2020-03-04T11:12:00.278072 #11427]  INFO -- : Writing /var/deploy/deploy/trucker/releases/20200304110656/public/assets/application-346b678500708f3f4e9cd72c46d1e9e54aaf76e0478b766519ac083bf93fbcff.css.gz
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	I, [2020-03-04T11:12:00.668528 #11427]  INFO -- : Writing /var/deploy/deploy/trucker/releases/20200304110656/public/assets/express/lib/application-9232ebdb20ad39572e70fb9e29810e63dbb63b58f5f18617c7c2bc8bd28321b5.js
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	I, [2020-03-04T11:12:00.669186 #11427]  INFO -- : Writing /var/deploy/deploy/trucker/releases/20200304110656/public/assets/express/lib/application-9232ebdb20ad39572e70fb9e29810e63dbb63b58f5f18617c7c2bc8bd28321b5.js.gz
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	Compiling...
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	Compiled all packs in /var/deploy/deploy/trucker/releases/20200304110656/public/packs
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+ DEBUG [f02a5987] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [f02a5987] 	
+
+Hash: 0f3805842a01da43e961
+ DEBUG [f02a5987] 	
+Version: webpack 4.41.5
+Time: 27627ms
+Built at: 03/04/2020 11:12:30 AM
+                                             Asset        Size  Chunks                                Chunk Names
+                  css/src/application-1f620ccf.css     141 KiB       1  [emitted] [immutable]         src/application
+               css/src/application-1f620ccf.css.br    16.5 KiB          [emitted]                     
+               css/src/application-1f620ccf.css.gz    22.3 KiB          [emitted]                     
+ DEBUG [f02a5987] 	            js/application-5afb99936e9404506de8.js     338 KiB       0  [emitted] [immutable]  [big]  application
+js/application-5afb99936e9404506de8.js.LICENSE.txt    2.15 KiB          [emitted]                     
+         js/application-5afb99936e9404506de8.js.br    71.7 KiB          [emitted]                     
+         js/application-5afb99936e9404506de8.js.gz     101 KiB          [emitted]                     
+        js/application-5afb99936e9404506de8.js.map    1.42 MiB       0  [emitted] [dev]               application
+     js/application-5afb99936e9404506de8.js.map.br     239 KiB          [emitted]                     
+     js/application-5afb99936e9404506de8.js.map.gz     404 KiB          [emitted]              [big]  
+        js/src/application-d4bbafa18adb6da08a51.js  1010 bytes       1  [emitted] [immutable]         src/application
+     js/src/application-d4bbafa18adb6da08a51.js.br   458 bytes          [emitted]                     
+     js/src/application-d4bbafa18adb6da08a51.js.gz   514 bytes          [emitted]                     
+    js/src/application-d4bbafa18adb6da08a51.js.map    4.56 KiB       1  [emitted] [dev]               src/application
+ js/src/application-d4bbafa18adb6da08a51.js.map.br    1.55 KiB          [emitted]                     
+ js/src/application-d4bbafa18adb6da08a51.js.map.gz    1.72 KiB          [emitted]                     
+                                     manifest.json   873 bytes          [emitted]                     
+                                  manifest.json.br   197 bytes          [emitted]                     
+                                  manifest.json.gz   224 bytes          [emitted]                     
+Entrypoint application [big] = js/application-5afb99936e9404506de8.js js/application-5afb99936e9404506de8.js.map
+ DEBUG [f02a5987] 	
+Entrypoint src/application = css/src/application-1f620ccf.css js/src/application-d4bbafa18adb6da08a51.js js/src/application-d4bbafa18adb6da08a51.js.map
+ [39] (webpack)/buildin/module.js 552 bytes {0} [built]
+ [71] ./app/javascript/packs/application.js 1.44 KiB {0} [built]
+[114] ./app/javascript/channels/index.js 205 bytes {0} [built]
+[115] ./app/javascript/channels sync _channel\.js$ 160 bytes {0} [built]
+[117] (webpack)/buildin/global.js 905 bytes {0} [built]
+[118] ./app/javascript/packs/src/application.scss 39 bytes {1} [built]
+    + 114 hidden modules
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  js/application-5afb99936e9404506de8.js (338 KiB)
+  js/application-5afb99936e9404506de8.js.map.gz (404 KiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  application (338 KiB)
+      js/application-5afb99936e9404506de8.js
+
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+ DEBUG [f02a5987] 	For more info visit https://webpack.js.org/guides/code-splitting/
+Child mini-css-extract-plugin ../../shared/node_modules/css-loader/dist/cjs.js??ref--7-1!../../shared/node_modules/postcss-loader/src/index.js??ref--7-2!../../shared/node_modules/sass-loader/dist/cjs.js??ref--7-3!app/javascript/packs/src/application.scss:
+    Entrypoint mini-css-extract-plugin = *
+    [0] /var/deploy/deploy/trucker/shared/node_modules/css-loader/dist/cjs.js??ref--7-1!/var/deploy/deploy/trucker/shared/node_modules/postcss-loader/src??ref--7-2!/var/deploy/deploy/trucker/shared/node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/javascript/packs/src/application.scss 572 KiB {0} [built]
+        + 1 hidden module
+
+  INFO [f02a5987] Finished in 65.450 seconds with exit status 0 (successful).
+ DEBUG [23e613e9] Running if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi as deploy@18.216.15.102
+ DEBUG [23e613e9] Command: if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi
+ DEBUG [23e613e9] Finished in 0.929 seconds with exit status 0 (successful).
+  INFO [2232a61d] Running /usr/bin/env mkdir -p /var/deploy/deploy/trucker/releases/20200304110656/assets_manifest_backup as deploy@18.216.15.102
+ DEBUG [2232a61d] Command: cd /var/deploy/deploy/trucker/releases/20200304110656 && /usr/bin/env mkdir -p /var/deploy/deploy/trucker/releases/20200304110656/assets_manifest_backup
+  INFO [2232a61d] Finished in 0.930 seconds with exit status 0 (successful).
+ DEBUG [19432467] Running /usr/bin/env ls /var/deploy/deploy/trucker/releases/20200304110656/public/assets/.sprockets-manifest* as deploy@18.216.15.102
+ DEBUG [19432467] Command: cd /var/deploy/deploy/trucker/releases/20200304110656 && /usr/bin/env ls /var/deploy/deploy/trucker/releases/20200304110656/public/assets/.sprockets-manifest*
+ DEBUG [19432467] 	/var/deploy/deploy/trucker/releases/20200304110656/public/assets/.sprockets-manifest-99fcaf9ed42a7029c9685bc73f8e3c55.json
+ DEBUG [19432467] 	
+ DEBUG [19432467] Finished in 0.928 seconds with exit status 0 (successful).
+ DEBUG [38a7f4c8] Running /usr/bin/env ls /var/deploy/deploy/trucker/releases/20200304110656/public/assets/.sprockets-manifest* as deploy@18.216.15.102
+ DEBUG [38a7f4c8] Command: cd /var/deploy/deploy/trucker/releases/20200304110656 && /usr/bin/env ls /var/deploy/deploy/trucker/releases/20200304110656/public/assets/.sprockets-manifest*
+ DEBUG [38a7f4c8] 	/var/deploy/deploy/trucker/releases/20200304110656/public/assets/.sprockets-manifest-99fcaf9ed42a7029c9685bc73f8e3c55.json
+ DEBUG [38a7f4c8] 	
+ DEBUG [38a7f4c8] Finished in 0.929 seconds with exit status 0 (successful).
+  INFO [85febc65] Running /usr/bin/env cp /var/deploy/deploy/trucker/releases/20200304110656/public/assets/.sprockets-manifest-99fcaf9ed42a7029c9685bc73f8e3c55.json /var/deploy/deploy/trucker/releases/20200304110656/assets_manifest_backup as deploy@18.216.15.102
+ DEBUG [85febc65] Command: cd /var/deploy/deploy/trucker/releases/20200304110656 && /usr/bin/env cp /var/deploy/deploy/trucker/releases/20200304110656/public/assets/.sprockets-manifest-99fcaf9ed42a7029c9685bc73f8e3c55.json /var/deploy/deploy/trucker/releases/20200304110656/assets_manifest_backup
+  INFO [85febc65] Finished in 0.930 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [369fee19] Running if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi as deploy@18.216.15.102
+ DEBUG [369fee19] Command: if test ! -d /var/deploy/deploy/trucker/releases/20200304110656; then echo "Directory does not exist '/var/deploy/deploy/trucker/releases/20200304110656'" 1>&2; false; fi
+ DEBUG [369fee19] Finished in 0.925 seconds with exit status 0 (successful).
+  INFO [81f17585] Running bundle exec rake db:migrate as deploy@18.216.15.102
+ DEBUG [81f17585] Command: cd /var/deploy/deploy/trucker/releases/20200304110656 && ( export RAILS_ENV="production" ; bundle exec rake db:migrate )
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	rake aborted!
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	PG::ConnectionBad: could not translate host name "ruckersdbinstance.ccowqli3o5z0.us-east-2.rds.amazonaws.com" to address: Name or service not known
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/pg-1.2.2/lib/pg.rb:58:in `initialize'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/pg-1.2.2/lib/pg.rb:58:in `new'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/pg-1.2.2/lib/pg.rb:58:in `connect'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:889:in `new_connection'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:933:in `checkout_new_connection'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:912:in `try_to_checkout_new_connection'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:873:in `acquire_connection'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:595:in `checkout'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:439:in `connection'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:1121:in `retrieve_connection'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_handling.rb:238:in `retrieve_connection'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/connection_handling.rb:206:in `connection'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/tasks/database_tasks.
+ DEBUG [81f17585] 	rb:238:in `migrate'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/railties/databases.rake:86:in `block (3 levels) in <top (required)>'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/railties/databases.rake:84:in `each'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/activerecord-6.0.2.1/lib/active_record/railties/databases.rake:84:in `block (2 levels) in <top (required)>'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	/var/deploy/deploy/trucker/shared/bundle/ruby/2.5.0/gems/rake-13.0.1/exe/rake:27:in `<top (required)>'
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	Tasks: TOP => db:migrate
+ DEBUG [81f17585] 	
+ DEBUG [81f17585] 	(See full trace by running task with --trace)
+ DEBUG [81f17585] 	

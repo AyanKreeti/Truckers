@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: truckers_production
-  username: truckers
-  password: <%= ENV['TRUCKERS_DATABASE_PASSWORD'] %>
+  host: truckersdbinstance.ccowqli3o5z0.us-east-2.rds.amazonaws.com
+  username: postgres
+  password: postgres
