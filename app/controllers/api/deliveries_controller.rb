@@ -4,12 +4,18 @@ class Api::DeliveriesController < ApplicationController
     # schedule = Schedule.find_by(trucker_id: params[:id], delivery_date: params[:date])
     # binding.pry
     # order_sequence = Delivery.where(schedule_id: params[:id]).where(status: "pending")
-    order_sequence = Delivery.where(schedule_id: params[:id])
+    order_sequence = Delivery.where(schedule_id: params[:id]).where(status: "delivered")
+    pending_order_sequence = Delivery.where(schedule_id: params[:id]).where.not(status: "delivered")
     orders = Order.where(id: order_sequence.collect{ |x| x.order_id})
+    pending_orders = Order.where(id: pending_order_sequence.collect{ |x| x.order_id})
     # binding.pry
-    orders = Delivery.order_tsp(orders)
+    loc=Hash.new
+    loc["lat"] = params[:lat]
+    loc["lng"] = params[:lng]
+    pending_order_list = Delivery.order_tsp(loc,pending_orders)
+    all_orders = orders + pending_order_list
     # binding.pry
-    render json: orders, adapter: :json
+    render json: all_orders, adapter: :json
   end
 
   def update_order_status
